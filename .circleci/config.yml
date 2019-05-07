@@ -25,6 +25,7 @@ jobs:
           command: |
             if [[ ! -z "$CIRCLE_TAG" ]]
             then
+              docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
               make release
             else
               echo "There is no tag, skipping..."
@@ -35,8 +36,7 @@ workflows:
   build:
     jobs:
       - build:
+          context: docker-cloud
           filters:
             tags:
-              only: /.*/
-            branches:
               only: /.*/
