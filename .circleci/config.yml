@@ -26,10 +26,17 @@ jobs:
             if [[ ! -z "$CIRCLE_TAG" ]]
             then
               make release
+            else
+              echo "There is no tag, skipping..."
             fi
 
 workflows:
   version: 2
   build:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
