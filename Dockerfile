@@ -1,4 +1,5 @@
 FROM ubuntu:18.04
+LABEL org.opencontainers.image.source https://github.com/okgolove/docker-aws-xray
 
 RUN apt update && \
     apt install -y unzip curl && \
