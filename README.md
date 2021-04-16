@@ -2,4 +2,4 @@
 
 This repo is deprecated.
 
-Please, use official aws-xray-daemon `public.ecr.aws/xray/aws-xray-daemon`. 
+Please, use official aws-xray-daemon image: `public.ecr.aws/xray/aws-xray-daemon`. 
